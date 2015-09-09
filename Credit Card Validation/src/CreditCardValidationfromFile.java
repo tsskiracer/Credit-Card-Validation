@@ -3,18 +3,16 @@ import java.io.IOException;
 
 import java.util.Scanner;
 
-public class CreditCardValidationfromFile
-	{
-
-		public static void main(String[] args) throws IOException
-			{
-				Scanner file = new Scanner(new File("ccnumbers.txt"));
-				System.out.println("Please input a 16 digit credit card number.");
-				file.hasNext();
+public class CreditCardValidationfromFile{
+	static long origcC;
+	public static void main(String[] args) throws IOException
+		{
+			Scanner file = new Scanner(new File("ccnumbers.txt"));
+			System.out.println("Please input a 16 digit credit card number.");							
+			while (file.hasNext())
+				{
 				long myArray[] = new long [16];
-				long cC = file.nextLong(); 
-				
-				
+				origcC = file.nextLong(); 
 				for (int i = 15; i>=0; i--){
 					if (i%2==0){
 						if((cC%10)>=5){
